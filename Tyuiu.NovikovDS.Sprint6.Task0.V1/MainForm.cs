@@ -14,11 +14,6 @@ namespace Tyuiu.NovikovDS.Sprint6.Task0.V1
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_ToDo_NovikovDS_Click(object sender, EventArgs e)
         {
             DataService ds = new DataService();

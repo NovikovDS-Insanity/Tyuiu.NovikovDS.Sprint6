@@ -79,7 +79,6 @@
             textBox_Uslovie_NovikovDS.TabIndex = 0;
             textBox_Uslovie_NovikovDS.TabStop = false;
             textBox_Uslovie_NovikovDS.Text = "Дано выражение вычислить его значение при x = 3, результат вывести в TextBox. Округлить до трёх знаков после запятой. ";
-            textBox_Uslovie_NovikovDS.TextChanged += textBox1_TextChanged;
             // 
             // groupBox_Vvod_NovikovDS
             // 
