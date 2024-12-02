@@ -1,6 +1,6 @@
-using Tyuiu.NovikovDS.Sprint6.Task1.V18.Lib;
+using Tyuiu.NovikovDS.Sprint6.Task2.V20.Lib;
 
-namespace Tyuiu.NovikovDS.Sprint6.Task1.V18.Test
+namespace Tyuiu.NovikovDS.Sprint6.Task2.V20.Test
 {
     [TestClass]
     public class DataServiceTest

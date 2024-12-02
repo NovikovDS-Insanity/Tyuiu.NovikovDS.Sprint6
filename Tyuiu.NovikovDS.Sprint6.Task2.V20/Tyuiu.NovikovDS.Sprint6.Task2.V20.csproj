@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Guna.Charts.WinForms" Version="1.1.0" />
-    <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
+    <PackageReference Include="guna.charts.winforms" Version="1.1.0" />
+    <PackageReference Include="winforms.datavisualization" Version="1.9.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tyuiu.NovikovDS.Sprint6.Task1.V18.Lib\Tyuiu.NovikovDS.Sprint6.Task1.V18.Lib.csproj" />
+    <ProjectReference Include="..\Tyuiu.NovikovDS.Sprint6.Task2.V20.Lib\Tyuiu.NovikovDS.Sprint6.Task2.V20.Lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>

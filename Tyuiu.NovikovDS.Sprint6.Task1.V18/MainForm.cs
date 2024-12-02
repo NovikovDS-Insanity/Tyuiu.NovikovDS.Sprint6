@@ -68,5 +68,10 @@ namespace Tyuiu.NovikovDS.Sprint6.Task1.V18
                 MessageBox.Show("¬ведены неверные данные", "ќшибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void TextBox_Uslovie_NovikovDS_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
