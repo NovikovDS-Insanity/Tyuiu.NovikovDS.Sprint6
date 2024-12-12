@@ -15,9 +15,9 @@ namespace Tyuiu.NovikovDS.Sprint6.Task2.V20.Test
             for (int i = start; i <= stop; i++) count++;
 
             double[] mass = new double[count];
-            mass[0] = 15.48;
-            mass[1] = 1;
-            mass[2] = -13.06;
+            mass[0] = -0.52;
+            mass[1] = 0;
+            mass[2] = -3.3;
 
             var res = ds.GetMassFunction(start, stop);
 
