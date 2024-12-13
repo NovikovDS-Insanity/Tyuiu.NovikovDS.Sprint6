@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             GroupBox_Uslovie_NovikovDS = new GroupBox();
             TextBox_Uslovie_NovikovDS = new TextBox();
@@ -160,14 +159,11 @@
             // 
             chartArea1.Name = "ChartArea1";
             Chart_Grafik_NovikovDS.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            Chart_Grafik_NovikovDS.Legends.Add(legend1);
             Chart_Grafik_NovikovDS.Location = new Point(127, 52);
             Chart_Grafik_NovikovDS.Name = "Chart_Grafik_NovikovDS";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
             series1.Name = "Series1";
             Chart_Grafik_NovikovDS.Series.Add(series1);
             Chart_Grafik_NovikovDS.Size = new Size(345, 364);
