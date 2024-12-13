@@ -9,8 +9,8 @@ namespace Tyuiu.NovikovDS.Sprint6.Task6.V16.Lib
             string res = File.ReadAllText(path);
 
             var wordsWithB = res.Split(new[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries)
-                                         .Where(word => word.Contains('b', StringComparison.OrdinalIgnoreCase));
-            res = string.Join(", ", wordsWithB);
+                                         .Where(word => word.Contains('b'));
+            res = string.Join(" ", wordsWithB);
 
             return res;
         }
