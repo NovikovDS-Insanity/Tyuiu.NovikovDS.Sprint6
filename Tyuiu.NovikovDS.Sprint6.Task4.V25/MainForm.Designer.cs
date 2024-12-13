@@ -75,7 +75,7 @@
             Button_ToDo_NovikovDS.Size = new Size(173, 27);
             Button_ToDo_NovikovDS.TabIndex = 8;
             Button_ToDo_NovikovDS.TabStop = false;
-            Button_ToDo_NovikovDS.Text = "Выполнитть";
+            Button_ToDo_NovikovDS.Text = "Выполнить";
             Button_ToDo_NovikovDS.UseVisualStyleBackColor = false;
             Button_ToDo_NovikovDS.Click += Button_ToDo_NovikovDS_Click;
             // 
