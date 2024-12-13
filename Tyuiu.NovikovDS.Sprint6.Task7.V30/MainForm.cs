@@ -1,10 +1,17 @@
 using System.Data;
+using System.Drawing.Drawing2D;
+using System.IO;
 using System.Windows.Forms;
+using Tyuiu.NovikovDS.Sprint6.Task7.V30.Lib;
 
 namespace Tyuiu.NovikovDS.Sprint6.Task7.V30
 {
     public partial class MainForm : Form
     {
+        DataService ds = new DataService();
+
+        string filePath;
+        int[,] matrixOut; 
 
         public MainForm()
         {
@@ -23,50 +30,115 @@ namespace Tyuiu.NovikovDS.Sprint6.Task7.V30
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string filePath = openFileDialog.FileName;
-                    LoadCsvData(filePath);
+                    filePath = openFileDialog.FileName;
+
+                    string[] lines = File.ReadAllLines(filePath);
+                    int rows = lines.Length;
+
+                    int column = lines[0].Split(';').Length;
+
+                    int[,] matrix = new int[rows, column];
+
+                    for (int i = 0; i < rows; i++)
+                    {
+                        string[] values = lines[i].Split(";");
+                        for (int j = 0; j < column; j++)
+                        {
+                            matrix[i, j] = int.Parse(values[j]);
+                        }
+                    }
+
+                    DataGridViewIn_NovikovDS.Rows.Clear();
+                    DataGridViewIn_NovikovDS.Columns.Clear();
+
+                    int rowCount = matrix.GetLength(0);
+                    int columnCount = matrix.GetLength(1);
+
+                    for (int j = 0; j < columnCount; j++)
+                    {
+                        DataGridViewIn_NovikovDS.Columns.Add($"{j + 1}", $"{j + 1}");
+                    }
+
+                    for (int i = 0; i < rowCount; i++)
+                    {
+                        var row = new DataGridViewRow();
+                        for (int j = 0; j < columnCount; j++)
+                        {
+                            row.Cells.Add(new DataGridViewTextBoxCell() { Value = matrix[i, j] });
+                        }
+                        DataGridViewIn_NovikovDS.Rows.Add(row);
+                    }
+
+                    for (int i = 0; i < columnCount; i++) DataGridViewIn_NovikovDS.Columns[i].Width = 35;
                 }
             }
         }
 
-        private void LoadCsvData(string filePath)
+        private void ButtonChange_NovikovDS_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-
-            using (var reader = new StreamReader(filePath))
+            if (DataGridViewIn_NovikovDS.Rows.Count == 0)
             {
-                // Чтение всех строк файла
-                var lines = reader.ReadToEnd().Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-
-                // Определение максимального количества столбцов
-                int maxColumns = lines.Max(line => line.Split(',').Length);
-
-                // Добавление колонок в DataTable
-                for (int i = 0; i < maxColumns; i++)
-                {
-                    dataTable.Columns.Add($"Column {i + 1}");
-                }
-
-                // Добавление данных в DataTable
-                foreach (var line in lines)
-                {
-                    var rowData = line.Split(',');
-                    dataTable.Rows.Add(rowData.Concat(new string[maxColumns - rowData.Length]).ToArray());
-                }
-            }
-
-            // Проверка на квадратность
-            int rowCount = dataTable.Rows.Count;
-            int columnCount = dataTable.Columns.Count;
-
-            if (rowCount != columnCount)
-            {
-                MessageBox.Show("Данные не могут быть представлены в квадратной таблице. Пожалуйста, проверьте файл.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Сначала загрузите файл.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Отображение данных в DataGridView
-            DataGridViewIn_NovikovDS.DataSource = dataTable;
+            matrixOut = ds.GetMatrix(filePath);
+
+            DataGridViewOut_NovikovDS.Rows.Clear();
+            DataGridViewOut_NovikovDS.Columns.Clear();
+
+            int rowCount = matrixOut.GetLength(0);
+            int columnCount = matrixOut.GetLength(1);
+
+            for (int j = 0; j < columnCount; j++)
+            {
+                DataGridViewOut_NovikovDS.Columns.Add($"{j + 1}", $"{j + 1}");
+            }
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                var row = new DataGridViewRow();
+                for (int j = 0; j < columnCount; j++)
+                {
+                    row.Cells.Add(new DataGridViewTextBoxCell() { Value = matrixOut[i, j] });
+                }
+                DataGridViewOut_NovikovDS.Rows.Add(row);
+            }
+
+            for (int i = 0; i < columnCount; i++) DataGridViewOut_NovikovDS.Columns[i].Width = 35;
+        }
+
+        private void ButtonSave_NovikovDS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    int rowCount = matrixOut.GetLength(0);
+                    int columnCount = matrixOut.GetLength(1);
+
+                    for (int i = 0; i < rowCount; i++)
+                    {
+                        for (int j = 0; j < columnCount; j++)
+                        {
+                            writer.Write(matrixOut[i, j]);
+
+                            // Не добавляем запятую после последнего элемента в строке
+                            if (j < columnCount - 1)
+                            {
+                                writer.Write(";");
+                            }
+                        }
+                        writer.WriteLine(); // Переход на новую строку после записи строки матрицы
+                    }
+                }
+
+                MessageBox.Show("Матрица успешно сохранена в файл " + filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении файла: " + ex.Message);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

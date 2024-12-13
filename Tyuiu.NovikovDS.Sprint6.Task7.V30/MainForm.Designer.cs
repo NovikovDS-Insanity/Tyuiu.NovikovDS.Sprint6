@@ -39,53 +39,61 @@
             // 
             // DataGridViewIn_NovikovDS
             // 
+            DataGridViewIn_NovikovDS.AllowUserToAddRows = false;
+            DataGridViewIn_NovikovDS.AllowUserToDeleteRows = false;
             DataGridViewIn_NovikovDS.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridViewIn_NovikovDS.Location = new Point(11, 58);
             DataGridViewIn_NovikovDS.Name = "DataGridViewIn_NovikovDS";
-            DataGridViewIn_NovikovDS.Size = new Size(273, 214);
+            DataGridViewIn_NovikovDS.ReadOnly = true;
+            DataGridViewIn_NovikovDS.Size = new Size(407, 348);
             DataGridViewIn_NovikovDS.TabIndex = 0;
             // 
             // DataGridViewOut_NovikovDS
             // 
+            DataGridViewOut_NovikovDS.AllowUserToAddRows = false;
+            DataGridViewOut_NovikovDS.AllowUserToDeleteRows = false;
             DataGridViewOut_NovikovDS.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridViewOut_NovikovDS.Location = new Point(290, 58);
+            DataGridViewOut_NovikovDS.Location = new Point(424, 58);
             DataGridViewOut_NovikovDS.Name = "DataGridViewOut_NovikovDS";
-            DataGridViewOut_NovikovDS.Size = new Size(273, 214);
+            DataGridViewOut_NovikovDS.ReadOnly = true;
+            DataGridViewOut_NovikovDS.Size = new Size(407, 348);
             DataGridViewOut_NovikovDS.TabIndex = 1;
             // 
             // ButtonOpen_NovikovDS
             // 
-            ButtonOpen_NovikovDS.Location = new Point(130, 13);
+            ButtonOpen_NovikovDS.Location = new Point(267, 13);
             ButtonOpen_NovikovDS.Name = "ButtonOpen_NovikovDS";
             ButtonOpen_NovikovDS.Size = new Size(101, 39);
             ButtonOpen_NovikovDS.TabIndex = 2;
             ButtonOpen_NovikovDS.Text = "Открыть";
             ButtonOpen_NovikovDS.UseVisualStyleBackColor = true;
-            ButtonOpen_NovikovDS.Click += this.ButtonOpen_NovikovDS_Click;
+            ButtonOpen_NovikovDS.Click += ButtonOpen_NovikovDS_Click;
             // 
             // ButtonChange_NovikovDS
             // 
-            ButtonChange_NovikovDS.Location = new Point(237, 13);
+            ButtonChange_NovikovDS.Location = new Point(374, 13);
             ButtonChange_NovikovDS.Name = "ButtonChange_NovikovDS";
             ButtonChange_NovikovDS.Size = new Size(101, 39);
             ButtonChange_NovikovDS.TabIndex = 3;
             ButtonChange_NovikovDS.Text = "Преобразовать";
             ButtonChange_NovikovDS.UseVisualStyleBackColor = true;
+            ButtonChange_NovikovDS.Click += ButtonChange_NovikovDS_Click;
             // 
             // ButtonSave_NovikovDS
             // 
-            ButtonSave_NovikovDS.Location = new Point(344, 13);
+            ButtonSave_NovikovDS.Location = new Point(481, 13);
             ButtonSave_NovikovDS.Name = "ButtonSave_NovikovDS";
             ButtonSave_NovikovDS.Size = new Size(101, 39);
             ButtonSave_NovikovDS.TabIndex = 4;
             ButtonSave_NovikovDS.Text = "Сохранить";
             ButtonSave_NovikovDS.UseVisualStyleBackColor = true;
+            ButtonSave_NovikovDS.Click += this.ButtonSave_NovikovDS_Click;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(579, 285);
+            ClientSize = new Size(840, 415);
             Controls.Add(ButtonSave_NovikovDS);
             Controls.Add(ButtonChange_NovikovDS);
             Controls.Add(ButtonOpen_NovikovDS);

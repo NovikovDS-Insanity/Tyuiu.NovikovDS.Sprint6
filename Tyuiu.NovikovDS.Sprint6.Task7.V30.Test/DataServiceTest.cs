@@ -6,6 +6,7 @@ namespace Tyuiu.NovikovDS.Sprint6.Task7.V30.Test
         [TestMethod]
         public void TestMethod1()
         {
+            Assert.AreEqual(1, 1);
         }
     }
 }
