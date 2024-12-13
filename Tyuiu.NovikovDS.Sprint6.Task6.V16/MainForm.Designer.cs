@@ -36,35 +36,35 @@
             // 
             // TextBoxIn_NovikovDS
             // 
-            TextBoxIn_NovikovDS.Location = new Point(113, 151);
+            TextBoxIn_NovikovDS.Location = new Point(12, 76);
             TextBoxIn_NovikovDS.Multiline = true;
             TextBoxIn_NovikovDS.Name = "TextBoxIn_NovikovDS";
-            TextBoxIn_NovikovDS.Size = new Size(292, 262);
+            TextBoxIn_NovikovDS.Size = new Size(271, 207);
             TextBoxIn_NovikovDS.TabIndex = 0;
             // 
             // TextBoxOut_NovikovDS
             // 
-            TextBoxOut_NovikovDS.Location = new Point(441, 171);
+            TextBoxOut_NovikovDS.Location = new Point(289, 76);
             TextBoxOut_NovikovDS.Multiline = true;
             TextBoxOut_NovikovDS.Name = "TextBoxOut_NovikovDS";
-            TextBoxOut_NovikovDS.Size = new Size(360, 125);
+            TextBoxOut_NovikovDS.Size = new Size(271, 207);
             TextBoxOut_NovikovDS.TabIndex = 1;
             // 
             // ButtonOpen_NovikovDS
             // 
-            ButtonOpen_NovikovDS.Location = new Point(167, 68);
+            ButtonOpen_NovikovDS.Location = new Point(177, 12);
             ButtonOpen_NovikovDS.Name = "ButtonOpen_NovikovDS";
-            ButtonOpen_NovikovDS.Size = new Size(75, 23);
+            ButtonOpen_NovikovDS.Size = new Size(106, 58);
             ButtonOpen_NovikovDS.TabIndex = 2;
             ButtonOpen_NovikovDS.Text = "Открыть";
             ButtonOpen_NovikovDS.UseVisualStyleBackColor = true;
-            ButtonOpen_NovikovDS.Click += this.ButtonOpen_NovikovDS_Click;
+            ButtonOpen_NovikovDS.Click += ButtonOpen_NovikovDS_Click;
             // 
             // ButtonChange_NovikovDS
             // 
-            ButtonChange_NovikovDS.Location = new Point(491, 68);
+            ButtonChange_NovikovDS.Location = new Point(289, 12);
             ButtonChange_NovikovDS.Name = "ButtonChange_NovikovDS";
-            ButtonChange_NovikovDS.Size = new Size(148, 31);
+            ButtonChange_NovikovDS.Size = new Size(106, 58);
             ButtonChange_NovikovDS.TabIndex = 3;
             ButtonChange_NovikovDS.Text = "Преобразовать";
             ButtonChange_NovikovDS.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(568, 291);
             Controls.Add(ButtonChange_NovikovDS);
             Controls.Add(ButtonOpen_NovikovDS);
             Controls.Add(TextBoxOut_NovikovDS);
