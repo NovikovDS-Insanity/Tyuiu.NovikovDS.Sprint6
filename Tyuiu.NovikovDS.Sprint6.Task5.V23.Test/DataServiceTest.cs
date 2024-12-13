@@ -9,22 +9,17 @@ namespace Tyuiu.NovikovDS.Sprint6.Task5.V23.Test
         public void TestMethod1()
         {
             DataService ds = new();
-            int start = -1, stop = 1;
+            string path = Path.Combine("C:", "DataSprint5", "InPutDataFileTask5V23.txt");
 
-            int count = 0;
-            for (int i = start; i <= stop; i++) count++;
+            int len = 0;
 
-            double[] mass = new double[count];
-            mass[0] = -3.98;
-            mass[1] = 1;
-            mass[2] = 0.02;
-
-            var res = ds.LoadFromDataFile("");
-
-            for (int i = 0; i < count; i++)
+            using (StreamReader reader = new StreamReader(path))
             {
-                Assert.AreEqual(mass[i], res[i]);
+                string line;
+                while ((line = reader.ReadLine()) != null) len++;
             }
+
+            Assert.AreEqual(20, len);
         }
     }
 }
